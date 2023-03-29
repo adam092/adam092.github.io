@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="test.css">
+    <title></title>
+  </head>
+  <body style="margin: 0">
+    <div class="header">
+    <p class="title">Guess Weekday</P>
+    </div>
+    <div class="flexContainerTwo" id="flxContainer">
+      <div class="dateLabel" id="box_1"></div>
+    </div>
+    <script>
+        const max = Date.parse("december 31, 2023");
+        const min = Date.parse("january 01, 2023");
+
+        const months =
+        ["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"];
+
+        const weekdays =
+        ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"]
+
+        function generateDate(max, min) {
+          const d = Math.floor(Math.random() * (max - min)) + min;
+          return new Date(d);
+        }
+
+        var quizDate = generateDate(max, min);
+
+        document.getElementById("box_1").innerHTML = quizDate.getDate() + ". " + months[quizDate.getMonth()];
+
+    </script>
+    <div class="flexTest">
+      <form>
+        <select id="answer" name="ukedag">
+          <option value="1">Mandag</option>
+          <option value="2">Tirsdag</option>
+          <option value="3">Onsdag</option>
+          <option value="4">Torsdag</option>
+          <option value="5">Fredag</option>
+          <option value="6">Lørdag</option>
+          <option value="0">Søndag</option>
+        </select>
+      </form>
+      <div class="submitBtn" onclick="submitContent()">
+        OK
+      </div>
+      <script>
+        function submitContent() {
+          const x = document.getElementById("answer").value;
+
+          if (x == quizDate.getDay()) {
+            document.getElementById("box_1").innerHTML = "Riktig!";
+            document.getElementById("box_1").style.color = "mediumSeaGreen";
+
+          } else {
+            document.getElementById("box_1").innerHTML =
+            "Feil! Riktig svar er " + weekdays[quizDate.getDay()];
+            document.getElementById("box_1").style.color = "tomato";
+          }
+        }
+      </script>
+    </div>
+    <script>
+      function resetDate() {
+        window.location.reload();
+      }
+    </script>
+    <div class="resetBtn" onclick="resetDate()">New date</div>
+  </body>
+</html>

@@ -47,7 +47,8 @@ body, html {
 
 .submitBtn {
   text-align: center;
-  background-color: mediumSeaGreen;
+  font-weight: bold;
+  background-color: #33CC66;
   width: 10%;
   padding: 10px;
   font-family: sans-serif;
@@ -74,10 +75,11 @@ select {
 }
 
 .resetBtn {
-  background-color: #212121;
+  background-color: #1E88E5;
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
+  font-weight: bold;
 
   color: white;
   font-family: sans-serif;

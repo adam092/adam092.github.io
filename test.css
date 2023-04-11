@@ -1,3 +1,7 @@
+body, html {
+  height: 100%;
+  background-color: #F44336;
+}
 /* Header view */
 .header {
   margin: 0;
@@ -31,6 +35,7 @@
   font-size: 30px;
   color: black;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .flexTest {
@@ -73,9 +78,6 @@ select {
   padding: 20px;
   margin: 20px;
   border-radius: 10px;
-  border-style: solid;
-  border-color: #F44336;
-  border-width: 5px;
 
   color: white;
   font-family: sans-serif;

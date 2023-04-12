@@ -7,15 +7,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <title>Doomsday</title>
   </head>
   <body style="margin: 0">
     <div style="background-color: #212121; margin: 0; height: 100%; width: 100%">
-    <div class="header">
-    <p class="title">DOOMSDAY</P>
+    <div class="headerView">
+    <p class="headerTitle">DOOMSDAY</P>
     </div>
-    <div class="flexContainerTwo" id="flxContainer">
+    <div class="dateView" id="flxContainer">
       <div class="dateLabel" id="box_1"></div>
     </div>
     <script>
@@ -38,7 +38,8 @@
         document.getElementById("box_1").innerHTML = quizDate.getDate() + ". " + months[quizDate.getMonth()];
 
     </script>
-    <div class="flexTest">
+    <div class="actionContainer">
+      <p style="color: white; font-family: sans-serif; font-size: 20px;">Det er en </p>
       <form>
         <select id="answer" name="ukedag">
           <option value="1">Mandag</option>
@@ -50,9 +51,6 @@
           <option value="0">Søndag</option>
         </select>
       </form>
-      <div class="submitBtn" onclick="submitContent()">
-        Svar
-      </div>
       <script>
         function submitContent() {
           const x = document.getElementById("answer").value;
@@ -64,17 +62,20 @@
           } else {
             document.getElementById("box_1").innerHTML =
             "Feil! Riktig svar er " + weekdays[quizDate.getDay()];
-            document.getElementById("box_1").style.color = "tomato";
+            document.getElementById("box_1").style.color = "red";
           }
         }
       </script>
+    </div>
+    <div class="answerBtn" onclick="submitContent()">
+      Svar
     </div>
     <script>
       function resetDate() {
         window.location.reload();
       }
     </script>
-    <div class="resetBtn" onclick="resetDate()">Ny dato</div>
+    <div class="getNewDateBtn" onclick="resetDate()">Ny dato</div>
    </div>
   </body>
 </html>

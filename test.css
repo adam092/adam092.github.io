@@ -3,14 +3,14 @@ body, html {
   background-color: #F44336;
 }
 /* Header view */
-.header {
+.headerView {
   margin: 0;
   background-color: #F44336;
   text-align: center;
   padding: 1px;
 }
 
-.title {
+.headerTitle {
   font-size: 35px;
   font-style: italic;
   font-weight: bold;
@@ -19,7 +19,7 @@ body, html {
 }
 
 /* Date view */
-.flexContainerTwo {
+.dateView {
   margin: 20px;
   border-radius: 10px;
   background-color: #424242;
@@ -28,7 +28,7 @@ body, html {
   justify-content: center;
 }
 
-.flexContainerTwo > div {
+.dateView > div {
   margin: 30px;
   padding: 50px;
   font-family: sans-serif;
@@ -38,29 +38,27 @@ body, html {
   font-weight: bold;
 }
 
-.flexTest {
+.actionContainer {
   display: flex;
   background-color: #424242;
   margin: 20px;
   border-radius: 10px;
+  justify-content: center;
 }
 
-.submitBtn {
-  text-align: center;
-  font-weight: bold;
-  background-color: #33CC66;
-  width: 10%;
-  padding: 10px;
-  font-family: sans-serif;
-  margin: 10px;
+.answerBtn {
+  background-color: #4CAF50;
   padding: 20px;
-  font-family: sans-serif;
+  margin: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+
   color: white;
-  border-radius: 5px;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 form {
-  width: 90%;
   margin: 10px;
 }
 
@@ -68,13 +66,15 @@ select {
   padding: 10px;
   height: 100%;
   margin: 0;
-  background-color: #f2f2ff;
+  background-color: #212121;
   border: none;
   border-radius: 5px;
   width: 100%;
+  font-size: 20px;
+  color: white;
 }
 
-.resetBtn {
+.getNewDateBtn {
   background-color: #1E88E5;
   padding: 20px;
   margin: 20px;
